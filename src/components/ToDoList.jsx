@@ -81,13 +81,8 @@ export const ToDoList = () => {
     }
 
     return (
-        /* global parent */
         <div className="px-5 sm:px-0 min-h-screen w-full flex flex-col items-center justify-center bg-[#f0f4f8]">
-
-            {/* main parent */}
             <div className="h-[600px] w-[300px] sm:w-[400px] md:w-[500px] bg-white rounded-2xl shadow-lg sm:px-10 relative pb-25 ">
-
-                {/* main section */}
                 <div className="flex-grow  flex flex-col w-full h-full">
 
                     {/* just a div for holding the tite*/}

@@ -4,7 +4,6 @@ import { TaskList } from "./TaskList";
 
 export const ToDoList = () => {
 
-    /* set localstorage as storage using useState */
     const [inProgress, setInProgress] = useState(() => {
         const saved = localStorage.getItem("inProgress");
         return saved ? JSON.parse(saved) : [];
@@ -21,7 +20,6 @@ export const ToDoList = () => {
 
     const [inputValue, setInputValue] = useState("");
 
-    /* state for opening in progress and done tasks */
     const [activeComponent, setActiveComponent] = useState('one');
 
     useEffect(() => {
@@ -57,21 +55,15 @@ export const ToDoList = () => {
     }
 
     function onEdit(task) {
-        /* check first it its in editing mode and if true */
         if (isEditing) {
-            /* call the array */
             const updatedTasks = [...inProgress];
-            /* update the edited index value from the previous index */
             updatedTasks[editIndex] = task;
-            /* set the new value of the index */
             setInProgress(updatedTasks);
         } else {
-            /* and if is not editing check the array if the task is already there*/
             if (inProgress.includes(task)) {
                 alert("Duplicate task!");
                 return;
             }
-            /* if unique value, then set the new value */
             setInProgress([...inProgress, task]);
         }
     }
